@@ -1,0 +1,15 @@
+<aura:component description="word">
+
+    <aura:attribute name="text" type="String"/>
+    <aura:attribute name="isOpened" type="Boolean"/>
+
+    <aura:registerEvent name="onclick" type="c:wordClickEvent"/>
+
+    <div class="slds-align_absolute-center slds-var-m-around_medium slds-var-p-around_medium"
+         onclick="{!c.wordClickHandler}">
+        <aura:if isTrue="{!v.isOpened}">
+            <div>{!v.text}</div>
+        </aura:if>
+    </div>
+
+</aura:component>

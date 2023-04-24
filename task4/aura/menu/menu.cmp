@@ -1,0 +1,45 @@
+<aura:component implements="flexipage:availableForAllPageTypes"
+                description="menu">
+
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Easy', 'value': '9'},
+    {'label': 'Medium', 'value': '16'},
+    {'label': 'Hard', 'value': '36'},
+    ]" />
+    <aura:attribute name="layoutSize" type="Integer" />
+    <aura:attribute name="displayWordsGrid" type="Boolean" default="False" />
+    <aura:attribute name="words" type="Object[]" />
+    <aura:attribute name="moves" type="Integer"/>
+    <aura:attribute name="hiddenWord" type="String" />
+    <aura:attribute name="wordsLabels" type="String[]" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="gameResult" event="c:gameResultEvent" action="{!c.gameResultHandler}" />
+
+    <lightning:card title="{!$Label.c.NameOfGameLabel}">
+
+        <lightning:layout horizontalAlign="center">
+
+            <lightning:layoutItem padding="around-small">
+                <lightning:combobox name="select" label=" " variant = "label-hidden"
+                                    value="inProgress" placeholder="Select level"
+                                    options="{!v.options}" onchange="{!c.handleChange}" />
+            </lightning:layoutItem>
+
+            <lightning:layoutItem padding="around-small">
+                <lightning:button variant="brand" label="{!$Label.c.StartButtonLabel}" onclick="{!c.handleStart}" />
+            </lightning:layoutItem>
+
+            <lightning:layoutItem padding="around-small">
+                <lightning:button label="{!$Label.c.ReshuffleLabel}" aura:id="reshuffleId" disabled="true" onclick="{!c.handleReshuffle}" />
+            </lightning:layoutItem>
+
+        </lightning:layout>
+
+        <aura:if isTrue="{!v.displayWordsGrid}">
+        <c:wordsGrid aura:id="wordsGridId" hiddenWord="{!v.hiddenWord}" wordCount="{!v.layoutSize}" moves="{!v.moves}" words="{!v.words}" />
+        </aura:if>
+
+    </lightning:card>
+
+</aura:component>

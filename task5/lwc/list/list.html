@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title={card_title} icon-name="custom:custom31">
+        <div class="slds-card__body slds-card__body_inner">
+
+            <template if:true={cars}>
+                <lightning-layout multiple-rows="true" pull-to-boundary="small">
+                    <template for:each={cars} for:item="car">
+                        <lightning-layout-item key={car.Id} size="3" class="slds-var-p-around_x-small">
+                            <c-car-tile
+                                    onselected={handleCarSelected}
+                                    car={car}>
+                            </c-car-tile>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+                <p>{messageSearch}</p>
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                    An error occurred while loading the car list
+                </div>
+            </template>
+          </div>
+      </lightning-card>
+  </template>

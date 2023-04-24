@@ -1,0 +1,13 @@
+.THIS {
+    background: aliceblue;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.THIS .text-upper{
+    text-transform: uppercase;
+}
+
+.THIS.change {
+    pointer-events: none;
+}

@@ -1,0 +1,18 @@
+:host {
+    --sds-c-card-color-background: linear-gradient(180deg, rgba(255,255,255,1) 50%, #E2E8F0 100%);
+}
+.car-tile {
+    display: block;
+    border: 1px solid #FFFFFF;
+    border-radius: .25rem;
+}
+.car-picture {
+    height: 170px;
+}
+.p-set {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "Gill Sans", sans-serif;
+}

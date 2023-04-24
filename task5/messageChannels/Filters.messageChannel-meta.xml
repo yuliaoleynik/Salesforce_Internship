@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>filters results</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass filters results</description>
+    <lightningMessageFields>
+        <fieldName>category</fieldName>
+        <description>This is the checkbox-category results</description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <fieldName>make</fieldName>
+        <description>This is the checkbox-make results</description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <fieldName>keyWord</fieldName>
+        <description>This is the search key</description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <fieldName>price</fieldName>
+        <description>This is the price</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

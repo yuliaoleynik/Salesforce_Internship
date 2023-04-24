@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="wordClickEvent">
+    <aura:attribute name="clickedWord" type="String" />
+</aura:event>

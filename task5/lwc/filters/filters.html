@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Filters" icon-name="action:new_note">
+        <div class="slds-card slds-var-p-around_x-small">
+            <lightning-input
+                    label={label.search_key_label}
+                    type="text"
+                    onchange={handleSearchKeyChange}>
+            </lightning-input>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="slider-id-01">
+                  <span class="slds-slider-label">
+                    <span class="slds-slider-label__label">{label.price_slider_label}</span>
+                    <span class="slds-slider-label__range">0 - 999999</span>
+                  </span>
+                </label>
+                <div class="slds-form-element__control">
+                  <div class="slds-slider">
+                    <input type="range" id="slider-id-01" onchange={handlePriceChange} class="slds-slider__range" min="0" max="999999" value={price} />
+                    <span class="slds-slider__value" format-style="currency" aria-hidden="true">{price}</span>
+                  </div>
+                </div>
+              </div>
+            <lightning-checkbox-group name="Category"
+                                    label={label.category_label}
+                                    options={optionsCategory}
+                                    value={value}
+                                    onchange={handleCategoryChange}>
+            </lightning-checkbox-group>
+            <lightning-checkbox-group name="Make"
+                                    label={label.make_label}
+                                    options={optionsMake}
+                                    value={value}
+                                    onchange={handleMakeChange}>
+            </lightning-checkbox-group>
+        </div>
+    </lightning-card>
+</template>

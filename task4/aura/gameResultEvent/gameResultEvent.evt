@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="gameResultEvent">
+    <aura:attribute name="result" type="Boolean" />
+</aura:event>

@@ -1,0 +1,26 @@
+<aura:component description="wordsGrid">
+    <aura:attribute name="moves" type="Integer"/>
+    <aura:attribute name="hiddenWord" type="String"/>
+    <aura:attribute name="wordCount" type="Integer" />
+    <aura:attribute name="words" type="Object[]" />
+
+    <aura:handler name="onclick" event="c:wordClickEvent" action="{!c.wordsGridHandler}"/>
+    <aura:registerEvent name="gameResult" type="c:gameResultEvent" />
+
+    <lightning:card>
+        <lightning:layout>
+
+            <p class="slds-m-around_small text-upper"> {!$Label.c.WordLable}: <b>{!v.hiddenWord}</b> </p>
+            <p class="slds-m-around_small"> {!$Label.c.MovesLeftLable}: {!v.moves}</p>
+
+        </lightning:layout>
+        <lightning:layout horizontalAlign="spread" multipleRows="true">
+            <aura:iteration items="{!v.words}" var="word">
+               <lightning:layoutItem size="4">
+                   <c:word isOpened="{!word.isOpened}" text="{!word.text}"/>
+               </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
+    </lightning:card>
+
+</aura:component>
